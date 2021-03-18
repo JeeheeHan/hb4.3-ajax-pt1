@@ -59,13 +59,13 @@ def order_melons():
     qty = int(request.form.get('qty'))
 
     if qty > 10:
-        result_code = 'ERROR'
+        result_code = 'ERROR1'
         result_text = "You can't buy more than 10 melons"
     elif qty > 0:
         result_code = 'OK'
         result_text = "You have bought {} {} melons".format(qty, melon)
     else:
-        result_code = 'ERROR'
+        result_code = 'ERROR2'
         result_text = "You want to buy fewer than 1 melons? Huh?"
 
     return jsonify({'code': result_code, 'msg': result_text})
